@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="cointainer">
+    <div class="container my-5">
         <form action="" autocomplete="off">
             <div class="form-group">
                 <label for="first_name">Primeiro nome</label>
