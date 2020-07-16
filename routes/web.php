@@ -88,3 +88,8 @@ Route::view('/form','form');
    */
   Route::delete('/users/1', 'UserController@destroy');
 
+  /**
+   * Any
+   */
+  Route::any('/users', 'UserController@any');
+
