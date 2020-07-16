@@ -33,12 +33,12 @@ Route::view('/form','form');
  *       Os dados ficam no corpo de requisição e não na URL;
  *       Route::post($uri, $callback);
  * 
- * PUT:
- * 
- * PATCH: 
- * 
+ * PUT: Objeto inteiro
  * Route::put($uri, $callback);
+ * 
+ * PATCH: uma caracteristica do objeto
  * Route::patch($uri, $callback);
+ * 
  * 
  * DELETE: 
  * Route::delete($uri, $callback);
@@ -68,3 +68,13 @@ Route::view('/form','form');
   */
  
   Route::put('/users/1', 'UserController@testPut');
+
+  /**
+   * PATCH
+   */
+  Route::patch('/users/1', 'UserController@testPatch');
+
+  /**
+   * Match PUT/PATCH
+   */
+  Route::match(['put', 'patch'], '/users/2', 'UserController@testMatch');
