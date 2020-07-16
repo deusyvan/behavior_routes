@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/form','form');
+//Route::view('/form','form');
 
 /**
  * 
@@ -58,39 +58,47 @@ Route::view('/form','form');
  /**
   * GET
   */
- Route::get('/users/1', 'UserController@index');
- Route::get('/getData', 'UserController@getData');
+ //Route::get('/users/1', 'UserController@index');
+ //Route::get('/getData', 'UserController@getData');
 
  /**
   * POST
   */
  
- Route::post('/postData', 'UserController@postData');
+ //Route::post('/postData', 'UserController@postData');
 
  /**
   * PUT
   */
  
-  Route::put('/users/1', 'UserController@testPut');
+  //Route::put('/users/1', 'UserController@testPut');
 
   /**
    * PATCH
    */
-  Route::patch('/users/1', 'UserController@testPatch');
+  //Route::patch('/users/1', 'UserController@testPatch');
 
   /**
    * Match PUT/PATCH
    * any = todos
    */
-  Route::match(['put', 'patch'], '/users/2', 'UserController@testMatch');
+  //Route::match(['put', 'patch'], '/users/2', 'UserController@testMatch');
 
   /**
    * DELETE
    */
-  Route::delete('/users/1', 'UserController@destroy');
+  //Route::delete('/users/1', 'UserController@destroy');
 
   /**
    * Any
    */
-  Route::any('/users', 'UserController@any');
+  //Route::any('/users', 'UserController@any');
 
+  //Rota que não existe no resource
+  Route::get('/posts/premium','PostController@premium');
+
+  //Resources
+  Route::resource('posts', 'PostController'); // php artisan make:controller PostController --resource
+
+  //Subscrevendo a rota do resource
+  Route::get('/posts', 'PostController@index');
