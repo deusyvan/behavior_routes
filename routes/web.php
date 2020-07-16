@@ -98,7 +98,8 @@ Route::get('/', function () {
   Route::get('/posts/premium','PostController@premium');
 
   //Resources
-  Route::resource('posts', 'PostController')->only(['index','show']); 
+  //Route::resource('posts', 'PostController')->only(['index','show']); 
+  Route::resource('posts', 'PostController')->except(['destroy']); 
   // php artisan make:controller PostController --resource
 
   //Subscrevendo a rota do resource
