@@ -20,6 +20,8 @@ Route::view('/form','form');
 /**
  * Route::verbo_http('URI','Controller@metodo');
  * 
+ * Passo a passo: definir rota -> Criar controllador -> criação de método -> camada view
+ * 
  * Route::get($uri, $callback);
  * Route::post($uri, $callback);
  * Route::put($uri, $callback);
@@ -30,4 +32,6 @@ Route::view('/form','form');
 
  Route::get('/users/1', 'UserController@index');
  Route::get('/getData', 'UserController@getData');
+
+ Route::post('/postData', 'UserController@postData');
  
