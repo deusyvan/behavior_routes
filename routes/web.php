@@ -43,12 +43,13 @@ Route::view('/form','form');
  *          Route::patch($uri, $callback);
  * 
  * 
- * DELETE: 
- * Route::delete($uri, $callback);
+ * DELETE: Utilizado para remover recurso. Tem o comportamento bem semelhante ao do POST
+ *          Os dados ficam no corpo da requisição e não na URL
+ *          Route::delete($uri, $callback);
  * 
- * OPTIONS:
- * 
- * Route::options($uri, $callback);
+ * OPTIONS: Utilizado para descobrir quais os verbos são aceitos por uma URI.
+ *          Pouco utilizado dentro da aplicação e faz mais sentido o uso em ambiente de desenvolvimento
+ *          Route::options($uri, $callback);
  * 
  * 
  * Passo a passo: definir rota -> Criar controllador -> criação de método -> camada view
