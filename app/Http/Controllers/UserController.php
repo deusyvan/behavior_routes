@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function testPut(Request $request)
     {
-        echo "<h1>Usuário de edição é o de código 1</h1>"
+        echo "<h1>Usuário de edição é o de código 1</h1>";
         var_dump($request);
         return '<h1>Disparou ação do PUT</h1>';
     }
