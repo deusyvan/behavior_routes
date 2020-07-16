@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container my-5">
-        <form action="" autocomplete="off">
+    <form action="{{ url('/getData') }}" method="GET" autocomplete="off">
             <div class="form-group">
                 <label for="first_name">Primeiro nome</label>
                 <input type="text" name="first_name" id="first_name" class="form-control" value="Deusyvan">
@@ -22,7 +22,7 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" class="form-control" value="deusyvan@gmail.com">
             </div>
-            <button type="button" class="btn btn-primary">Enviar</button>
+            <button class="btn btn-primary">Enviar</button>
         </form>
     </div>
     
