@@ -18,20 +18,53 @@ Route::get('/', function () {
 Route::view('/form','form');
 
 /**
+ * 
+ * 
+ * Definição de rota: 
  * Route::verbo_http('URI','Controller@metodo');
  * 
- * Passo a passo: definir rota -> Criar controllador -> criação de método -> camada view
+ * verbos_http = [GET, POST, PUT, PATCH, DELETE, OPTIONS];
  * 
- * Route::get($uri, $callback);
- * Route::post($uri, $callback);
+ * GET: Utilizado para obter dados de servidor e não altera o estado do recurso.
+ *      Quando um formulário GET é disparado, os dados ficam presentes na URL.
+ *      Route::get($uri, $callback);
+ *      
+ * POST: Utilizado para criação de recursos ou envio de dados ao servidor para validação.
+ *       Os dados ficam no corpo de requisição e não na URL;
+ *       Route::post($uri, $callback);
+ * 
+ * PUT:
+ * 
+ * PATCH: 
+ * 
  * Route::put($uri, $callback);
  * Route::patch($uri, $callback);
+ * 
+ * DELETE: 
  * Route::delete($uri, $callback);
+ * 
+ * OPTIONS:
+ * 
  * Route::options($uri, $callback);
+ * 
+ * 
+ * Passo a passo: definir rota -> Criar controllador -> criação de método -> camada view
  */
 
+ /**
+  * GET
+  */
  Route::get('/users/1', 'UserController@index');
  Route::get('/getData', 'UserController@getData');
 
- Route::post('/postData', 'UserController@postData');
+ /**
+  * POST
+  */
  
+ Route::post('/postData', 'UserController@postData');
+
+ /**
+  * PUT
+  */
+ 
+  Route::put('/users/1', 'UserController@testPut');
