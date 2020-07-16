@@ -11,6 +11,11 @@
 |
 */
 
+Route::resourceVerbs([
+    'create' => 'cadastro',
+    'edit' => 'editar'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
