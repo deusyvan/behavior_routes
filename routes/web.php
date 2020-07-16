@@ -79,5 +79,12 @@ Route::view('/form','form');
 
   /**
    * Match PUT/PATCH
+   * any = todos
    */
   Route::match(['put', 'patch'], '/users/2', 'UserController@testMatch');
+
+  /**
+   * DELETE
+   */
+  Route::delete('/users/1', 'UserController@destroy');
+

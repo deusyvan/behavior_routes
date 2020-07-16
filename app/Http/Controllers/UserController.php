@@ -42,5 +42,10 @@ class UserController extends Controller
         echo "<h1>Usuário de edição é o de código 2</h1>";
         var_dump($request);
     }
+
+    public function destroy()
+    {
+        return '<h1>Disparou ação de DELETE para o registro 1</h1>';
+    }
 }
 

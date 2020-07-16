@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="container my-5">
-    <form action="{{ url('/users/2') }}" method="POST" autocomplete="off">
+    <form action="{{ url('/users/1') }}" method="POST" autocomplete="off">
 
     <input type="hidden" name="_token" value="{{csrf_token() }}">
-            @method('PUT')
+            @method('DELETE')
             <div class="form-group">
                 <label for="first_name">Primeiro nome</label>
                 <input type="text" name="first_name" id="first_name" class="form-control" value="Deusyvan">
