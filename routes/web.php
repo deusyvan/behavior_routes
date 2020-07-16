@@ -99,12 +99,41 @@ Route::get('/', function () {
    */
   //Route::any('/users', 'UserController@any');
 
+  /**
+ * Rotas Resource
+ *
+ * Link da documentação de referência: https://laravel.com/docs/5.7/controllers#resource-controllers
+ *
+ * 1. Quanto você trabalha com resource, e precisa definir uma rota que não faz parte do agrupamento
+ *    o correto é adicionar acima do objeto. Como no caso abaixo, o /posts/premium não é implementado
+ *    pelo Route::resource, logo, está definido acima de sua chamada.
+ *
+ * 2. Quando você precisa sobrescrever uma rota que já faz parte do agrupamento, você deve definir
+ *    imediatamente abaixo para evitar conflitos, isso está sendo exemplificado abaixo com a rota
+ *    get em /posts.
+ *
+ * 3. Pode ser que você não precise implementar todas as rotas do sistema de recurso, nesse caso você
+ *    pode trabalhar com o only (somente) ou com o except (exceto) informando um array com as posições
+ *    que você precisar.
+ *
+ */
+
+//Route::get('/posts/premium', 'PostController@premium');
+//Route::resource('posts', 'PostController');
+//Route::resource('posts', 'PostController')->only(['index', 'show']);
+//Route::resource('posts', 'PostController')->except(['destroy']);
+//Route::get('/posts', 'PostController@index');
+
+//Route::get('/users', 'UserController@show');
+
+
+
   //Rota que não existe no resource
-  Route::get('/posts/premium','PostController@premium');
+  //Route::get('/posts/premium','PostController@premium');
 
   //Resources
   //Route::resource('posts', 'PostController')->only(['index','show']); 
-  Route::resource('posts', 'PostController')->except(['destroy']); 
+  //Route::resource('posts', 'PostController')->except(['destroy']); 
   // php artisan make:controller PostController --resource
 
   //Subscrevendo a rota do resource
