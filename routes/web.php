@@ -33,11 +33,14 @@ Route::view('/form','form');
  *       Os dados ficam no corpo de requisição e não na URL;
  *       Route::post($uri, $callback);
  * 
- * PUT: Objeto inteiro
- * Route::put($uri, $callback);
+ * PUT: Utilizado para atualização de recurso. O caminho da requisição deve conter o objeto a ser atualizado
+ *      juntamente com todos os parametros do objeto para que possa ser feita a ação com sucesso.
+ *      Deve-se usar o form Method Spoofing (falsificação do verbo) [@method ('PUT)]
+ *      Route::put($uri, $callback);
  * 
- * PATCH: uma caracteristica do objeto
- * Route::patch($uri, $callback);
+ * PATCH:   Utilizado para atualização parcial do recurso. Tem o mesmo funcionamento no PUT.
+ *          Também trabalha com form Method Spoofing (falsificação do verbo) [@method ('PATCH)]
+ *          Route::patch($uri, $callback);
  * 
  * 
  * DELETE: 
