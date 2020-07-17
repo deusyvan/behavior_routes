@@ -244,4 +244,8 @@ Route::name('admin.posts.')->group(function(){
     Route::get('/admin/posts', 'PostController@show')->name('show');
 });
 
+Route::middleware(['throttle:10,1'])->group(function(){//São 10 requisições dentro de 1 minuto de acordo com a sessão
+    Route::view('/form', 'form');
+});
+
 
