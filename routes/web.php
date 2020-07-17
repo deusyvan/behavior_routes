@@ -193,5 +193,5 @@ Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
 
 Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
     var_dump($id, $comment);
-})->where(['id' => '[0-9]+', 'comment' => '[a-z0-9]+']);
+})->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
 
