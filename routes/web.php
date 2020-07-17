@@ -168,17 +168,22 @@ Route::get('/', function () {
 
 
 
-Route::get('/users', function () {
-    echo 'Listagens dos usuários da minha base!';//php artisan route:list
-});//Closure  cacheamento não funciona
+// Route::get('/users', function () {
+//     echo 'Listagens dos usuários da minha base!';//php artisan route:list
+// });//Closure  cacheamento não funciona
 
-Route::view('/form','form');
+// Route::view('/form','form');
 
-Route::fallback(function(){
-    echo "Ops! Seja muito bem vindo a pagina 404. Nenhum registro encontrado";
+// Route::fallback(function(){
+//     echo "Ops! Seja muito bem vindo a pagina 404. Nenhum registro encontrado";
+// });
+
+// Route::redirect('/users/add', url('/form'), 301);
+
+// Route::get('/artigos', 'PostController@index')->name('posts.index');
+// Route::get('/artigos/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
+
+
+Route::get('/users/{id}/comments/{comment}', function ($id,$comment) {
+    var_dump($id, $comment);
 });
-
-Route::redirect('/users/add', url('/form'), 301);
-
-Route::get('/artigos', 'PostController@index')->name('posts.index');
-Route::get('/artigos/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
