@@ -222,7 +222,16 @@ Route::get('/', function () {
 
 //Route::get('/users/{id}/comments/{comment?}', 'UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z]+']);
 
-//Inspecionamento
+/**
+ *
+ * Link da documentação de referência: https://laravel.com/docs/5.7/routing#named-routes
+ *
+ * Inspecionamento
+ *
+ * Permite que você resgate qual é a rota atual, o nome definido para a rota e a ação.
+ * A ação não pode ser uma closure, pois caso seja o retorno do método será null.
+ *
+ */
 
 Route::get('/users/1', 'UserController@inspect')->name('inspect');
 
