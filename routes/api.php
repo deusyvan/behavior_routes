@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('users', 'API\UserController');//php artisan make:controller API\\UserController --api
+//Route::apiResource('users', 'API\UserController');//php artisan make:controller API\\UserController --api

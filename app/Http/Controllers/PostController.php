@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function indexRedirect()
+    {
+        return redirect()->route('posts.index');
+    }
+    
     public function premium()
     {
         echo '<h1>Listagem dos artigos premium do meu site</h1>';

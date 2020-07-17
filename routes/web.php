@@ -138,3 +138,47 @@ Route::get('/', function () {
 
   //Subscrevendo a rota do resource
   //Route::get('/posts', 'PostController@index');
+
+  /**
+ * Tipos de Chamada
+ * 
+ * Link da documentação de referência: https://laravel.com/docs/5.7/routing
+ * 
+ * Controlador@método: É a forma mais utilizada para invocar um recurso específico que possui responsabilidade
+ *                     clara e definida.
+ * 
+ * Closure ou Função Anônima: É uma forma rápida de ter acesso aos recursos do framework, porém, fazendo 
+ *                            o uso desse tipo de recurso você acaba acoplando uma responsabilidade do 
+ *                            seu código dentro do seu arquivo de rotas.
+ *                            Outra desvantagem é que não é aceito pelo sistema de cacheamento de rotas.
+ * 
+ * View: De acordo com uma especificação de url (GET), é retornada uma visão (de dentro de resource/views).
+ * 
+ * Fallback: Quanto o framework não consegue resolver uma rota, será encaminhado para a rota de fallback!
+ *           Ambiente ideal para implementar a página 404 do sistema.
+ * 
+ * Redirect: Para criar um redirecionamento, você deve informar qual a URI acessada e para onde deve ser
+ *           redirecionado juntamente com o código HTTP. Por padrão o código é o 301!
+ * 
+ * Nomeação: Ao implementar o nome nas rotas, você passa a ter um auxílio maior da IDE com o autocomplete
+ *           e permite que os Controladores fiquem desacoplados de rotas fixas. Você passa a ter uma maior
+ *           flexibilidade e tem um desenvolvimento mais ágil e padronizado.
+ * 
+ */
+
+
+
+Route::get('/users', function () {
+    echo 'Listagens dos usuários da minha base!';//php artisan route:list
+});//Closure  cacheamento não funciona
+
+Route::view('/form','form');
+
+Route::fallback(function(){
+    echo "Ops! Seja muito bem vindo a pagina 404. Nenhum registro encontrado";
+});
+
+Route::redirect('/users/add', url('/form'), 301);
+
+Route::get('/artigos', 'PostController@index')->name('posts.index');
+Route::get('/artigos/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
