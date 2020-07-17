@@ -233,6 +233,10 @@ Route::get('/', function () {
  *
  */
 
-Route::get('/users/1', 'UserController@inspect')->name('inspect');
+//Route::get('/users/1', 'UserController@inspect')->name('inspect');
+
+Route::prefix('admin')->group(function(){
+    Route::view('/form', 'form');
+});
 
 
