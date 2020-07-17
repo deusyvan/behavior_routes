@@ -235,21 +235,25 @@ Route::get('/', function () {
 
 //Route::get('/users/1', 'UserController@inspect')->name('inspect');
 
-Route::prefix('admin')->group(function(){
-    Route::view('/form', 'form');
-});
+// Route::prefix('admin')->group(function(){
+//     Route::view('/form', 'form');
+// });
 
-Route::name('admin.posts.')->group(function(){
-    Route::get('/admin/posts/index', 'PostController@index')->name('index');
-    Route::get('/admin/posts', 'PostController@show')->name('show');
-});
+// Route::name('admin.posts.')->group(function(){
+//     Route::get('/admin/posts/index', 'PostController@index')->name('index');
+//     Route::get('/admin/posts', 'PostController@show')->name('show');
+// });
 
-Route::middleware(['throttle:10,1'])->group(function(){//São 10 requisições dentro de 1 minuto de acordo com a sessão
-    Route::view('/form', 'form');
-});
+// Route::middleware(['throttle:10,1'])->group(function(){//São 10 requisições dentro de 1 minuto de acordo com a sessão
+//     Route::view('/form', 'form');
+// });
 
-Route::namespace('Admin')->group(function(){
-    Route::get('/users', 'UserController@index');
+// Route::namespace('Admin')->group(function(){
+//     Route::get('/users', 'UserController@index');
+// });
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['throttle:10,1'], 'as' => 'admin.'], function () {
+    Route::resource('users', 'UserController');
 });
 
 
