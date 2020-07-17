@@ -16,9 +16,9 @@ Route::resourceVerbs([
     'edit' => 'editar'
 ]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //Route::view('/form','form');
 
@@ -281,4 +281,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['thr
     Route::resource('users', 'UserController');
 });
 
+//Usando caching em produção para aumentar a performance em até 100 vezes!
+//php artisan route:cache
 
+//Deixando de usar o caching: 
+//php artisan route:clear
