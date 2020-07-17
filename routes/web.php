@@ -224,12 +224,6 @@ Route::get('/', function () {
 
 //Inspecionamento
 
-Route::get('/users/1', function () {
-    $route = Route::current();//Rota atual
-    $name = Route::currentRouteName();//Nome da rota
-    $action = Route::currentRouteAction();//ação da rota
-
-    var_dump($route, $name, $action);
-})->name('inspect');
+Route::get('/users/1', 'UserController@inspect')->name('inspect');
 
 
