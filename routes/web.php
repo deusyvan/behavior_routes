@@ -187,3 +187,7 @@ Route::get('/', function () {
 Route::get('/users/{id}/comments/{comment}', function ($id,$comment) {
     var_dump($id, $comment);
 });
+
+Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
+    var_dump($id, $comment);
+});
