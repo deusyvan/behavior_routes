@@ -230,6 +230,6 @@ Route::get('/users/1', function () {
     $action = Route::currentRouteAction();//ação da rota
 
     var_dump($route, $name, $action);
-});
+})->name('inspect');
 
 
