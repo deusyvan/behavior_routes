@@ -52,5 +52,11 @@ class UserController extends Controller
     {
         return '<h1>Qualquer verbalização aceita</h1>';
     }
+
+    public function userComments($id, $comment = null)
+    {
+        echo 'Controller: User Método: userComments';
+        var_dump($id, $comment);
+    }
 }
 

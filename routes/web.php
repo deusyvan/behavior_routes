@@ -187,11 +187,13 @@ Route::get('/', function () {
 //     var_dump($id, $comment);
 // });
 
-Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
-    var_dump($id, $comment);
-})->where('id','[0-9]+');
+// Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
+//     var_dump($id, $comment);
+// })->where('id','[0-9]+');
 
-Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
-    var_dump($id, $comment);
-})->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
+// Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
+//     var_dump($id, $comment);
+// })->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
+
+Route::get('/users/{id}/comments/{comment?}', 'UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z]+']);
 
