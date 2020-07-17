@@ -239,4 +239,9 @@ Route::prefix('admin')->group(function(){
     Route::view('/form', 'form');
 });
 
+Route::name('admin.posts.')->group(function(){
+    Route::get('/admin/posts/index', 'PostController@index')->name('index');
+    Route::get('/admin/posts', 'PostController@show')->name('show');
+});
+
 
