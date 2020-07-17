@@ -183,11 +183,11 @@ Route::get('/', function () {
 // Route::get('/artigos', 'PostController@index')->name('posts.index');
 // Route::get('/artigos/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
 
-
-Route::get('/users/{id}/comments/{comment}', function ($id,$comment) {
-    var_dump($id, $comment);
-});
+// Route::get('/users/{id}/comments/{comment}', function ($id,$comment) {
+//     var_dump($id, $comment);
+// });
 
 Route::get('/users/{id}/comments/{comment?}', function ($id,$comment = null) {
     var_dump($id, $comment);
-});
+})->where('id','[0-9]+');
+
