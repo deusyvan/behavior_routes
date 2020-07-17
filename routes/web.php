@@ -248,4 +248,8 @@ Route::middleware(['throttle:10,1'])->group(function(){//São 10 requisições d
     Route::view('/form', 'form');
 });
 
+Route::namespace('Admin')->group(function(){
+    Route::get('/users', 'UserController@index');
+});
+
 
