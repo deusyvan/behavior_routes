@@ -235,6 +235,31 @@ Route::get('/', function () {
 
 //Route::get('/users/1', 'UserController@inspect')->name('inspect');
 
+
+/**
+ * Link da documentação de referência: https://laravel.com/docs/5.7/routing#route-groups
+ *
+ * Agrupamento de Rotas
+ *
+ * Prefix: Força que seja informado o parâmetro através da URL! É muito útil para a parte
+ *         administrativa da aplicação.
+ *
+ * Name: Adiciona um prefixo no nome de todas as rotas que pertencem ao grupo para ficar
+ *       mais fácil o acesso através da IDE.
+ *
+ * Middleware: Faz com que todas as rotas do grupo obrigatóriamente obedeçam determinado
+ *             middleware. O exemplo utilizado foi do throttle que já vem nativamente no
+ *             Laravel e limita a quantidade de requisições de acordo com o tempo.
+ *
+ * Namespace: Todos os controladores referenciados dentro do grupo, sejam pertencentes
+ *            ao namespace imposto. Recurso muito utilizado na área administrativa do
+ *            projeto.
+ *
+ * Group: União de todas essas clausulas de agrupamento do laravel e permite que a aplicação
+ *        permaneça organizada e padronizada. Com apenas duas linhas é possível definir um
+ *        resource completo de administração já forçando todos os parâmetros necessários.
+ */
+
 // Route::prefix('admin')->group(function(){
 //     Route::view('/form', 'form');
 // });
