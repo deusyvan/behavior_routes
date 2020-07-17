@@ -195,5 +195,41 @@ Route::get('/', function () {
 //     var_dump($id, $comment);
 // })->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
 
-Route::get('/users/{id}/comments/{comment?}', 'UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z]+']);
+
+/**
+ *
+ * Link da documentação de referência: https://laravel.com/docs/5.7/routing#route-parameters
+ *
+ * Tratamento de Parâmetros
+ *
+ * Parâmetro: Para definir um atributo da URI como parâmetro basta encapsular o conteúdo em torno
+ *            de chaves. Com isso você consegue resgatar os dados dentro de uma closure ou dentro
+ *            de um método do seu controlador usando $[nome_do_atributo].
+ *
+ * Parâmetro Opcional: Uma forma rápida de sinalizar para o Laravel de que o parâmetro pode ou não
+ *                     ser informado, é colocar um ponto de interrogação (?) no final do atributo.
+ *                     Para que seu uso seja efetivo, ao declarar o parâmetro do método, é necessário
+ *                     setar um valor padrão caso não tenha um respectivo valor. No caso, null.
+ *
+ * Validações: Podem ser feitas através de expressão regular utilizando o encadeamento de where
+ *             na definição da rota. Você pode tanto informar um único atributo ('chave', 'reg_exp')
+ *             ou um coletivo de regras com (['chave1' => 'reg_exp', 'chave2' => 'reg_exp', ...])
+ *
+ * Controlador@método: Funciona da mesma forma que o closure. Você pode invocar o Request também
+ *                     independente da ordem dos atributos.
+ *
+ */
+
+//Route::get('/users/{id}/comments/{comment?}', 'UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z]+']);
+
+//Inspecionamento
+
+Route::get('/users/1', function () {
+    $route = Route::current();//Rota atual
+    $name = Route::currentRouteName();//Nome da rota
+    $action = Route::currentRouteAction();//ação da rota
+
+    var_dump($route, $name, $action);
+});
+
 
